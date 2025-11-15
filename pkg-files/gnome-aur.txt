@@ -1,3 +1,2 @@
-gnome-browser-connector
 orchis-theme-git
 tela-circle-icon-theme-git

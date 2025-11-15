@@ -1,22 +1,20 @@
-com.authy.Authy Authy
 com.discordapp.Discord Discord
-com.slack.Slack Slack
-com.bitwarden.desktop Bitwarden
 com.github.iwalton3.jellyfin-media-player Jellyfin
 com.github.tchx84.Flatseal Flatseal
-com.parsecgaming.parsec Parsec
 com.github.wwmm.easyeffects EasyEffects
-com.mojang.Minecraft Minecraft
-io.github.shiftey.Desktop Github_Desktop
+com.mattjakeman.ExtensionManager
+com.protonvpn.www
+com.rustdesk.RustDesk
+com.vivaldi.Vivaldi
+com.vscodium.codium
 de.haeckerfelix.Fragments Fragments
-md.obsidian.Obsidian Obsidian
+me.proton.Mail
+me.proton.Pass
 org.bleachbit.BleachBit BleachBit
 org.chromium.Chromium Chromium
 org.gimp.GIMP Gimp
 org.gnome.meld Meld
 org.onlyoffice.desktopeditors Onlyoffice
-org.telegram.desktop Telegram
+org.videolan.VLC
 org.virt_manager.virt-viewer VirtViewer
-org.zotero.Zotero Zotero
-sh.cider.Cider Cider
 us.zoom.Zoom Zoom

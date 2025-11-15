@@ -23,7 +23,7 @@ echo -ne "
 Setting up mirrors for optimal download
 "
 source $CONFIGS_DIR/setup.conf
-iso=$(curl -4 ifconfig.co/country-iso)
+iso=$(curl -4 ipinfo.io/country)
 timedatectl set-ntp true
 pacman -S --noconfirm archlinux-keyring #update keyrings to latest to prevent packages failing to install
 pacman -S --noconfirm --needed pacman-contrib terminus-font
@@ -49,7 +49,7 @@ echo -ne "
                     Formating Disk
 -------------------------------------------------------------------------
 "
-umount -A --recursive /mnt # make sure everything is unmounted before we start
+umount -Aq --recursive /mnt # make sure everything is unmounted before we start
 # disk prep
 sgdisk -Z ${DISK} # zap all on disk
 sgdisk -a 2048 -o ${DISK} # new gpt disk 2048 alignment

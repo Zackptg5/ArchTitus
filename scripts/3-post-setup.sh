@@ -77,6 +77,9 @@ if [[ "${DESKTOP_ENV}" == "gnome" ]]; then
 elif [[ ${DESKTOP_ENV} == "kde" ]]; then
   systemctl disable sddm.service
   systemctl enable sddm-plymouth.service
+elif [[ ${DESKTOP_ENV} == "cosmic" ]]; then
+  systemctl enable cosmic-greeter.service
+  systemctl enable power-profiles-daemon.service
 fi
 
 echo -ne "
@@ -135,6 +138,8 @@ rm -r $HOME/ArchTitus
 mv -f /home/$USERNAME/ArchTitus/scripts/4-postboot-setup.sh /home/$USERNAME/4-postboot-setup.sh
 if [[ $DESKTOP_ENV != "gnome" ]]; then
   sed -i '/--Gnome only--/,$d' /home/$USERNAME/4-postboot-setup.sh
+elif [[ ${AUR_HELPER} == "none" ]]; then
+  sed -i '/--AUR only--/,$d' /home/$USERNAME/4-postboot-setup.sh
 fi
 rm -r /home/$USERNAME/ArchTitus
 

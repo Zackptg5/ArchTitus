@@ -1,5 +1,3 @@
 advcpmv
-epson-inkjet-printer-201308w
+icaclient
 plymouth-theme-arch-breeze-git
-rustdesk-bin
-vivaldi-widevine

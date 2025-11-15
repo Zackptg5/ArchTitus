@@ -2,8 +2,10 @@ bind
 dconf-editor
 gnome
 gnome-bluetooth
+gnome-browser-connector
 gnome-multi-writer
 gnome-nettool
+gnome-shell-extensions
 gnome-sound-recorder
 gnome-terminal
 gnome-tweaks
