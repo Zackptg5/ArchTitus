@@ -1,5 +1,7 @@
 bind
 dconf-editor
+extension-manager
+fragments
 gnome
 gnome-bluetooth
 gnome-browser-connector
@@ -10,6 +12,7 @@ gnome-sound-recorder
 gnome-terminal
 gnome-tweaks
 gthumb
+meld
 net-tools
 nmap
 polkit-gnome

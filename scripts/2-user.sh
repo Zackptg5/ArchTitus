@@ -49,14 +49,34 @@ if [[ -f "$HOME/ArchTitus/pkg-files/${DESKTOP_ENV}-chaoticaur.txt" ]]; then
 fi
 
 if [[ ${AUR_HELPER} != "none" ]]; then
+
+  # Debug symbols take forever, don't bother
+  debug_workaround() {
+    mkdir temp
+    cd temp
+    yay -G - < $1
+    sed -i "s/\!strip')/\!strip' '\!debug')/" */PKGBUILD
+    for i in *; do
+      cd $i
+      makepkg -si --noconfirm --needed
+      cd ..
+    done
+    cd ..
+    rm -rf temp
+  }
+
   sudo pacman -S yay --noconfirm --needed # Use yay temporarily - pamac doesn't work right during install
   if [[ ${AUR_HELPER} == "pamac" ]]; then
     sudo pacman -Rdd --noconfirm archlinux-appstream-data
     sudo pacman -S --noconfirm archlinux-appstream-data-pamac pamac-nosnap # Replace default with pamac
   fi
-  yay -S --noconfirm --needed - < $HOME/ArchTitus/pkg-files/aur-pkgs.txt
+  # yay -S --noconfirm --needed - < $HOME/ArchTitus/pkg-files/aur-pkgs.txt
+  debug_workaround $HOME/ArchTitus/pkg-files/aur-pkgs.txt
+  mkdir -p $HOME/.ICAClient/cache
+  cp /opt/Citrix/ICAClient/config/{All_Regions,Trusted_Region,Unknown_Region,canonicalization,regions}.ini $HOME/.ICAClient/
   if [[ -f "$HOME/ArchTitus/pkg-files/${DESKTOP_ENV}-aur.txt" ]]; then
-    sudo pacman -S --noconfirm --needed - < $HOME/ArchTitus/pkg-files/${DESKTOP_ENV}-aur.txt
+    # yay -S --noconfirm --needed - < $HOME/ArchTitus/pkg-files/${DESKTOP_ENV}-aur.txt
+    debug_workaround $HOME/ArchTitus/pkg-files/${DESKTOP_ENV}-aur.txt
   fi
 
   # Add advcpmv alias

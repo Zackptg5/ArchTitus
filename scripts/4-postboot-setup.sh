@@ -7,7 +7,7 @@ while read -r line; do
   name="$(echo $line | awk '{print $2}')"
   echo "INSTALLING: $name"
   sudo flatpak install flathub $pkg -y
-done < $HOME/ArchTitus/pkg-files/flatpak.txt
+done < ~/flatpak.txt
 
 # Easyeffects Profiles
 echo 1 | bash -c "$(curl -fsSL https://raw.githubusercontent.com/JackHack96/PulseEffects-Presets/master/install.sh)"
@@ -20,7 +20,6 @@ echo "Making gnome tweaks"
 #gnome-extensions enable auto-move-windows@gnome-shell-extensions.gcampax.github.com
 gnome-extensions enable drive-menu@gnome-shell-extensions.gcampax.github.com
 gnome-extensions enable places-menu@gnome-shell-extensions.gcampax.github.com
-gnome-extensions enable status-icons@gnome-shell-extensions.gcampax.github.com
 gnome-extensions enable system-monitor@gnome-shell-extensions.gcampax.github.com
 #gnome-extensions enable windows-navigator@gnome-shell-extensions.gcampax.github.com
 #gnome-extensions enable workspace-indicator@gnome-shell-extensions.gcampax.github.com
@@ -28,16 +27,18 @@ gnome-extensions enable user-theme@gnome-shell-extensions.gcampax.github.com # E
 which pamac &>/dev/null && gnome-extensions enable pamac-updates@manjaro.org
 
 # Enable fractional scaling in wayland
-gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']"
+gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer', 'xwayland-native-scaling']"
 
 # Applying tweaks/fixes
 gsettings set org.gnome.desktop.default-applications.terminal exec 'gnome-terminal'
-git clone https://github.com/Zackptg5/gnome-dash-fix
-chmod +x gnome-dash-fix/interactive.py
-./gnome-dash-fix/interactive.py
+# Appears broken for now
+# git clone https://github.com/Zackptg5/gnome-dash-fix
+# chmod +x gnome-dash-fix/interactive.py
+# ./gnome-dash-fix/interactive.py
 
 echo "Set font to 'MesloLGNS NF Regular' in Gnome Terminal before first launching it!"
 echo -e "Here's 3rd party extensions I use (grab them from extensions.gnome.org):
+AppIndicator
 Bluetooth Quick Connect
 Caffeine
 Clipboard Indicator

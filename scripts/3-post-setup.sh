@@ -134,14 +134,17 @@ sed -i 's/^%wheel ALL=(ALL:ALL) NOPASSWD: ALL/# %wheel ALL=(ALL:ALL) NOPASSWD: A
 sed -i 's/^# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/' /etc/sudoers
 sed -i 's/^# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/' /etc/sudoers
 
-rm -r $HOME/ArchTitus
-mv -f /home/$USERNAME/ArchTitus/scripts/4-postboot-setup.sh /home/$USERNAME/4-postboot-setup.sh
-if [[ $DESKTOP_ENV != "gnome" ]]; then
-  sed -i '/--Gnome only--/,$d' /home/$USERNAME/4-postboot-setup.sh
-elif [[ ${AUR_HELPER} == "none" ]]; then
-  sed -i '/--AUR only--/,$d' /home/$USERNAME/4-postboot-setup.sh
+if [[ $DESKTOP_ENV != "server" ]]; then
+  cp -v /home/$USERNAME/ArchTitus/scripts/4-postboot-setup.sh /home/$USERNAME/ArchTitus/pkg-files/flatpak.txt /home/$USERNAME
+  chown $USERNAME:$USERNAME /home/$USERNAME/flatpak.txt /home/$USERNAME/4-postboot-setup.sh
+  chmod +x /home/$USERNAME/4-postboot-setup.sh
+  if [[ $DESKTOP_ENV != "gnome" ]]; then
+    sed -i '/--Gnome only--/,$d' /home/$USERNAME/4-postboot-setup.sh
+  elif [[ ${AUR_HELPER} == "none" ]]; then
+    sed -i '/--AUR only--/,$d' /home/$USERNAME/4-postboot-setup.sh
+  fi
 fi
-rm -r /home/$USERNAME/ArchTitus
+rm -r $HOME/ArchTitus /home/$USERNAME/ArchTitus
 
 # Replace in the same state
 cd $pwd

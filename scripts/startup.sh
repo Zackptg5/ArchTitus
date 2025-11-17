@@ -8,6 +8,7 @@ CONFIG_FILE=$CONFIGS_DIR/setup.conf
 if [ ! -f $CONFIG_FILE ]; then # check if file exists
     touch -f $CONFIG_FILE # create file if not exists
 fi
+chmod +x $SCRIPTS_DIR/*
 
 # set options in setup.conf
 set_option() {

@@ -7,15 +7,19 @@ avahi
 awesome-terminal-fonts
 bash-completion
 base-devel
+bleachbit
 bluez
 bluez-libs
 btrfs-progs
+chromium
 cronie
 cups
 cups-pdf
 dialog
+discord
 dnsmasq
 dosfstools
+easyeffects
 efibootmgr
 egl-wayland
 exfat-utils
@@ -25,6 +29,7 @@ fuseiso
 gcc
 gparted
 gptfdisk
+gimp
 grub-btrfs
 gst-libav
 gst-plugin-pipewire
@@ -42,6 +47,7 @@ linux-lts-headers
 lsof
 lzop
 mesa
+network-manager-applet
 noto-fonts-emoji
 ntfs-3g
 ntp
@@ -57,6 +63,8 @@ pipewire-jack
 pipewire-v4l2
 pipewire-zeroconf
 powerline-fonts
+proton-vpn-gtk-app
+smbclient
 snap-pac
 snapper
 syncthing
@@ -67,6 +75,10 @@ ufw
 unrar
 unzip
 usbutils
+virt-viewer
+vivaldi
+vivaldi-ffmpeg-codecs
+vlc
 which
 wireguard-tools
 wireless_tools
