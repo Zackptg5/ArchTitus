@@ -3,6 +3,7 @@ onlyoffice-bin
 rustdesk-bin
 snapper-gui-git
 ttf-ms-fonts
+ttf-meslo-nerd-font-powerlevel10k
 vscodium
 xpipe
 zoom
