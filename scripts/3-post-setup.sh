@@ -109,6 +109,8 @@ systemctl enable systemd-resolved.service
 echo "  Resolvconf enabled"
 systemctl enable grub-btrfsd.service
 echo "  Grub-btrfs snapshots enabled"
+systemctl enable syncthing@$USERNAME.service
+echo "  Syncthing enabled"
 
 echo -ne "
 -------------------------------------------------------------------------
