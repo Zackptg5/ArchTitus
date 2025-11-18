@@ -16,6 +16,11 @@ Final Setup and Configurations
 "
 source ${HOME}/ArchTitus/configs/setup.conf
 
+# Thunderbolt keyboard freezing fix
+echo -e '#!/bin/bash\necho 1 > /sys/bus/pci/rescan' > /usr/local/bin/thunderbolt-rescan.sh
+chmod +x /usr/local/bin/thunderbolt-rescan.sh
+echo 'ACTION=="change", SUBSYSTEM=="thunderbolt", ATTR{authorized}=="1", RUN+="/usr/local/bin/thunderbolt-rescan.sh"' > /etc/udev/rules.d/98-thunderbolt-rescan.rules
+
 curl -LJO https://raw.githubusercontent.com/osandov/osandov-linux/master/scripts/btrfs_map_physical.c
 gcc -O2 -o btrfs_map_physical btrfs_map_physical.c
 if [[ "${FS}" == "btrfs" ]]; then
