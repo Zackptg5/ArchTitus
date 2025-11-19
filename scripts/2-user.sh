@@ -67,8 +67,7 @@ if [[ ${AUR_HELPER} != "none" ]]; then
 
   sudo pacman -S yay --noconfirm --needed # Use yay temporarily - pamac doesn't work right during install
   if [[ ${AUR_HELPER} == "pamac" ]]; then
-    sudo pacman -Rdd --noconfirm archlinux-appstream-data
-    sudo pacman -S --noconfirm archlinux-appstream-data-pamac pamac-nosnap # Replace default with pamac
+    sudo pacman -S --noconfirm appstream-glib archlinux-appstream-data pamac
   fi
   # yay -S --noconfirm --needed - < $HOME/ArchTitus/pkg-files/aur-pkgs.txt
   debug_workaround $HOME/ArchTitus/pkg-files/aur-pkgs.txt
