@@ -28,6 +28,8 @@ sudo chsh -s $(which zsh) $(whoami)
 # Change editor to nano
 sed -i "s/EDITOR=.*/EDITOR=nano/" zsh/.zshrc
 sed -i "s/EDITOR=.*/EDITOR=nano/" zsh/aliasrc
+# Add user to group for esphome
+sudo usermod -aG uucp $USERNAME
 
 # Install DE
 sudo pacman -S --noconfirm --needed - < $HOME/ArchTitus/pkg-files/${DESKTOP_ENV}.txt
