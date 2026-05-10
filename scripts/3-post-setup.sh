@@ -80,8 +80,8 @@ echo -ne "
 if [[ "${DESKTOP_ENV}" == "gnome" ]]; then
   systemctl enable gdm.service
 elif [[ ${DESKTOP_ENV} == "kde" ]]; then
-  systemctl disable sddm.service
-  systemctl enable sddm-plymouth.service
+  systemctl enable sddm.service
+  systemctl enable power-profiles-daemon.service
 elif [[ ${DESKTOP_ENV} == "cosmic" ]]; then
   systemctl enable cosmic-greeter.service
   systemctl enable power-profiles-daemon.service

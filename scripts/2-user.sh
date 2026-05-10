@@ -95,10 +95,6 @@ fi
 export PATH=$PATH:~/.local/bin
 if [[ ${DESKTOP_ENV} == "kde" ]]; then
   sudo ln -sf /usr/share/plymouth/themes/arch-breeze/logo_symb_white.png /usr/share/plymouth/themes/arch-breeze/logo.png
-  pip install konsave
-  konsave -i ~/ArchTitus/configs/kde.knsv
-  sleep 1
-  konsave -a kde
 fi
 
 # Firefox touchscreen scrolling fix
