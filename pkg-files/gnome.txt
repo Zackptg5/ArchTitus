@@ -3,7 +3,6 @@ dconf-editor
 extension-manager
 fragments
 gnome
-gnome-bluetooth
 gnome-browser-connector
 gnome-multi-writer
 gnome-nettool
