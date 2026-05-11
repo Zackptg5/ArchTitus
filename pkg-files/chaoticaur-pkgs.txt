@@ -2,7 +2,6 @@ arch-update
 epson-inkjet-printer-escpr
 onlyoffice-bin
 rustdesk-bin
-snapper-gui-git
 ttf-ms-fonts
 ttf-meslo-nerd-font-powerlevel10k
 vscodium

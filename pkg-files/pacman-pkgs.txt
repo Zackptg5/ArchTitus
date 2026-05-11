@@ -10,6 +10,7 @@ base-devel
 bleachbit
 bluez
 bluez-libs
+btrfs-assistant
 btrfs-progs
 chromium
 cronie
@@ -66,6 +67,7 @@ powerline-fonts
 proton-vpn-gtk-app
 smbclient
 snap-pac
+snap-support
 snapper
 syncthing
 systemd-resolvconf
