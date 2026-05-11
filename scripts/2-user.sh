@@ -100,6 +100,9 @@ fi
 # Firefox touchscreen scrolling fix
 [ -f /etc/security/pam_env.conf ] && sudo bash -c 'echo "MOZ_USE_XINPUT2 DEFAULT=1" >> /etc/security/pam_env.conf' || sudo bash -c 'echo "MOZ_USE_XINPUT2 DEFAULT=1" >> /usr/share/security/pam_env.conf'
 
+# Arch update tray icon
+arch-update --tray --enable
+
 echo -ne "
 -------------------------------------------------------------------------
                     SYSTEM READY FOR 3-post-setup.sh

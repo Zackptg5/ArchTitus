@@ -1,3 +1,4 @@
+arch-update
 epson-inkjet-printer-escpr
 onlyoffice-bin
 rustdesk-bin
